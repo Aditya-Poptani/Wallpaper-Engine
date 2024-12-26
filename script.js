@@ -248,3 +248,24 @@ function pageSeperaterAnimation(){
 }
 pageSeperaterAnimation()
 
+
+gsap.to(".category-card",{
+    transform:"translateX(-220%)",
+    scrollTrigger:{
+        trigger:".page3",
+        // markers:true,
+        scrub:2,
+        start:"top 0%",
+        end:"top -350%",
+        pin:true
+    }
+},"start");
+
+// const categoryCardElem = document.querySelector('.category-card');
+// categoryCardElem.addEventListener("mouseenter",function(){
+//     gsap.from(".category-description",{
+//         y:50,
+//         opacity:0,
+//         duration:0.6
+//     })
+// })

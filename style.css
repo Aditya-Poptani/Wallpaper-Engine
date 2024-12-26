@@ -325,12 +325,19 @@ nav .logo-img-container img{
     width: 23vw;
     line-height: 2vw;
 }
+a{
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+.explore-tagline-container a:hover{
+    transform: translate(5px,-5px);
+}
 .explore-tagline-container i{
     margin-right: 2vw;
     font-size: 3.3vw;
     color: var(--primary);
     cursor: pointer;
-    z-index: 700;
+    z-index: 1;
 }
 .page-seperater-container{
     height: 60vh;
@@ -356,6 +363,58 @@ nav .logo-img-container img{
     height: 100vh;
     background-color: var(--primary2);
     z-index: 200;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-
+.category-title{
+    font-family: "Brasika",sans-serif;
+    font-size: 4vw;
+    color: #3f1c0d;
+    position: relative;
+    margin-top: 1vw;
+}
+.category-card-container{
+    height: 70%;
+    width: 100%;
+    /* background-color: black; */
+    margin-top: 2vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    
+}
+.category-card{
+    height: 90%;
+    width: 30%;
+    transform: translateX(150%);
+    flex-shrink: 0;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Archive",sans-serif; 
+}
+.category-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.category-description{
+    position: absolute;
+    z-index: 100;
+    font-size: 4vw;
+    color: white;
+    mix-blend-mode: difference;
+}
+.cardMore{
+    background-color: transparent;
+    border: 1px solid #401c0d;
+    cursor: pointer;
+}
