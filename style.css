@@ -392,7 +392,7 @@ a{
     width: 30%;
     transform: translateX(150%);
     flex-shrink: 0;
-    background-color: white;
+    background-color: rgb(29, 8, 8);
     border-radius: 10px;
     overflow: hidden;
     position: relative;
