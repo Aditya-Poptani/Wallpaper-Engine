@@ -76,7 +76,7 @@ exCursorShrinkAni()
 
 function MainColorChangeAni(){
     gsap.to(".home",{
-        backgroundColor: "#D6A96F",
+        backgroundColor: "rgb(11, 11, 11)",
         duration:1.2,
         scrollTrigger:{
             trigger:".page2",
@@ -87,7 +87,7 @@ function MainColorChangeAni(){
         }
     })
     gsap.to(".page2",{
-        backgroundColor: "#D6A96F",
+        backgroundColor: "rgb(11, 11, 11)",
         duration:1.2,
         scrollTrigger:{
             trigger:".page2",
@@ -98,7 +98,7 @@ function MainColorChangeAni(){
         }
     })
     gsap.to(".page3",{
-        backgroundColor: "#D6A96F",
+        backgroundColor: "rgb(11, 11, 11)",
         duration:1.2,
         scrollTrigger:{
             trigger:".page2",
@@ -125,7 +125,7 @@ gsap.to(".img-container",{
 
 gsap.to(".home-main",{
     transform: "rotateX(5deg)",
-    filter:"sepia(3)",
+    // filter:"sepia(3)",
     duration:1.2,
     scrollTrigger:{
         trigger:".page2",
