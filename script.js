@@ -123,15 +123,33 @@ gsap.to(".img-container",{
     }
 })
 
-gsap.to(".home-main",{
-    transform: "rotateX(5deg)",
-    // filter:"sepia(3)",
+// gsap.to(".home-main",{
+//     transform: "rotateX(5deg)",
+//     // filter:"sepia(3)",
+//     duration:1.2,
+//     scrollTrigger:{
+//         trigger:".page2",
+//         scrub:true
+//     }
+// })
+gsap.to(".wrapper-img",{
+    scale:1.3,
     duration:1.2,
+    ease:"power2",
     scrollTrigger:{
         trigger:".page2",
         scrub:true
     }
 })
+
+// Shery.textAnimate(".tagline h1",{
+//     style: 1,
+//     y: 10,
+//     delay: 0.1,
+//     duration: 0.3,
+//     ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+//     multiplier: 0.1,
+// })
 
 gsap.from(".tagline h1",{
     y:100,
@@ -234,7 +252,7 @@ function pageSeperaterAnimation(){
         gsap.to(path,{
             attr:{d:initialPath},
             duration:1,
-            ease:"elastic.out(1,0.3)"
+            ease:"elastic.out(1,0.5)"
         })
     })
     svg.addEventListener("mouseleave",function(dets){
@@ -248,9 +266,7 @@ function pageSeperaterAnimation(){
 }
 pageSeperaterAnimation()
 
-
-gsap.to(".category-card",{
-    transform:"translateX(-220%)",
+let catTL = gsap.timeline({
     scrollTrigger:{
         trigger:".page3",
         // markers:true,
@@ -259,13 +275,131 @@ gsap.to(".category-card",{
         end:"top -350%",
         pin:true
     }
+})
+
+catTL.to(".category-card",{
+    transform:"translateX(-220%)",
 },"start");
 
-// const categoryCardElem = document.querySelector('.category-card');
-// categoryCardElem.addEventListener("mouseenter",function(){
-//     gsap.from(".category-description",{
-//         y:50,
-//         opacity:0,
-//         duration:0.6
+
+
+
+// document.querySelector(".home-main").addEventListener("mouseenter",function(){
+//     gsap.to(".wrapper-img",{
+//         // height:"105%",
+//         // width:"105%",
+//         scale:1.09,
+//         duration:0.5,
+//         ease:"power2"
 //     })
 // })
+// document.querySelector(".home-main").addEventListener("mouseleave",function(){
+//     gsap.to(".wrapper-img",{
+//         // height:"100%",
+//         // width:"100%",
+//         scale:1,
+//         duration:0.5,
+//         ease:"power2"
+//     })
+// })
+
+gsap.from(".category-title",{
+    y:100,
+    opacity:0,
+    duration:1,
+    ease:"power2",
+    scrollTrigger:{
+        trigger:".page3",
+        start:"top 30%"
+    }
+})
+
+let menuTl = gsap.timeline();
+
+
+menuTl.to(".home-main-overlay",{
+    opacity:1,
+    duration:0.3
+},"start")
+menuTl.to(".home-main nav",{
+    height:0,
+    duration:0.3,
+    ease:"expo.in"
+},"start")
+menuTl.to(".menu-section",{
+    width:"30%",
+    duration:0.3
+})
+
+
+menuTl.pause()
+document.querySelector("#menu-btn").addEventListener("click",function(){
+    menuTl.play()
+    gsap.to(".menu-closeBtn",{
+        opacity:1,
+        duration:0.3,
+    },)
+    gsap.to(".menu-closeBtn i",{
+        opacity:1,
+        duration:0.3,
+        delay:0.3
+    },)
+})
+document.querySelector(".menu-closeBtn").addEventListener("click",function(){
+    gsap.to(".menu-closeBtn",{
+        opacity:0,
+        duration:0.3,
+    },)
+    gsap.to(".menu-closeBtn i",{
+        opacity:0,
+        duration:0.3,
+    },)
+    menuTl.reverse()
+    menuTl.pasue()
+})
+
+
+const menuLinkELem = document.querySelectorAll(".menu-links");
+menuLinkELem.forEach(menuLink => {
+    menuLink.addEventListener("mouseenter",function(){
+        gsap.to(menuLink.querySelector("div") ,{
+            height:"100%",
+            duration:0.3
+        })
+        gsap.to(menuLink.querySelector("h2"),{
+            // color:"#F4B4C6",
+            duration:0.3,
+            transform:"translateY(-110%)"
+        })
+        gsap.to(menuLink.querySelector("#menu-link-duplicate"),{
+            // color:"#F4B4C6",
+            duration:0.3,
+            transform:"translateY(0%)",
+            delay:0,
+        })
+        gsap.to(menuLink.querySelector("#menu-link-duplicate"),{
+            duration:0.3,
+            transform:"translateY(0%)",
+            opacity:1
+        })
+    })
+    menuLink.addEventListener("mouseleave",function(){
+        gsap.to(menuLink.querySelector("div"),{
+            height:"0%",
+            duration:0.3,
+            delay:0.2
+        })
+        gsap.to(menuLink.querySelector("h2"),{
+            // color:"#151313",
+            duration:0.3,
+            transform:"translateY(0%)",
+            delay:0.2
+        })
+        gsap.to(menuLink.querySelector("#menu-link-duplicate"),{
+            // color:"#151313",
+            duration:0.3,
+            opacity:0,
+            transform:"translateY(100%)"
+        })
+    })
+})
