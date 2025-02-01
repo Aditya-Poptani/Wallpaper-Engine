@@ -9,40 +9,57 @@
     rel="stylesheet">
     <link rel="stylesheet" href="Styles/main.css">
     <link rel="icon" type="image/x-icon" href="Home-images/favicon-removebg.png">
-    
 </head>
 <body>
     <div class="cursor"></div>
+    
     <div class="main">
-        <div class="home"> 
-            <div class="loading-screen"><h1>Novaire</h1></div>  
+        <div class="homeSaved-fullscreen">
+            <i title="close" id="homeSavefullScreen-closeBtn" class="ri-close-line"></i>
+        </div>  
+        <div class="home">  
+            <div class="coolbg"></div>
+            <div class="homeBottomMask"></div>
+            <div class="loading-screen">
+                <span>Novaire</span>
+                <div class="loading-bar">
+                    <div class="loadingBar-progress"></div>
+                </div>
+            </div>  
             <div class="home-main">
-                <img class="wrapper-img" src="https://cdn.cosmos.so/2dc1ea51-3bbd-459b-8796-488f45c73b09?format=jpeg" alt="">
-                <nav>
-                    <!-- <div class="logo-img-container">
-                        <svg width="299" height="362" viewBox="0 0 299 362" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="299" height="362" fill=""/>
-                            <path d="M0 0H143V143H0V0Z" fill="#151313"/>
-                            <rect x="156" y="76" width="134" height="128" fill="#151313"/>
-                            <rect x="156" y="219" width="143" height="143" fill="#151313"/>
-                            <rect x="10" y="164" width="133" height="137" fill="#151313"/>
-                            </svg>
-                            
-                    </div> -->
-                    <h1 class="text-logo">Novaire</h1>
+                <p class="subHeading">"Design is but the breath of beauty, and in the dance of pattern and light, wallpaper sings a song of elegance—a whisper of art upon the canvas of space."</p>
+                <nav> 
+                    <h1 class="text-logo">Novaire.</h1>
                     <div class="nav-right-section">
-                        <button>Subscribe</button>
-                        <i id="menu-btn" class="ri-menu-3-line"></i>
+                        
+                        <div class="themeControl-container">
+                            <button id="moonBtn" class="themebtn active-theme">
+                                <i class="ri-moon-fill"></i>
+                            </button>
+                            <button id="sunBtn" i class="themebtn ">
+                                <i class="ri-sun-line"></i>
+                            </button>
+                        </div>
+                        <!-- <i onclick="homeSaveBtnOpen()" title="saved" class="fa-regular  fa-bookmark home-save-icon"></i> -->
+                        <span onclick="homeSaveBtnOpen()" title="saved" class="home-save-icon">Saved</span>
+                        <!-- <i id="menu-btn" class="ri-menu-2-line"></i> -->
+                        <div class="navRight-right-container">
+                            <span>Menu</span>
+                            <div>
+                                <svg id="menu-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2vw" fill="currentColor"><path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
+                                <svg id="menu-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
+                            </div>
+                        </div>
                     </div>
 
                 </nav>
                 <div class="tagline-container">
                     <div>
                         <div class="tagline">
-                            <h1>Wallapapers that</h1>
+                            <h1>NOVAire</h1>
                         </div>
                         <div class="tagline">
-                            <h1 class="bottom-tagline">Inspire every pixel.</h1>
+                            <h1 class="bottom-tagline"></h1>
                         </div>
                     </div>
                     <!-- <div class="home-rectangle-graphic"></div> -->
@@ -84,6 +101,11 @@
                 </div>
                 <div class="home-main-overlay"></div>
             </div>
+            
+        </div>
+
+        <div class="page2"> 
+            
             <div class="homebg-img-wrapper">
                 <div class="homebg-img-columns">
                     <div class="homebg-img-container" style="--delay:-10;--s2:-13vw"><img src="Images/sp3.jpg" alt=""></div>
@@ -107,10 +129,6 @@
                     <div class="homebg-img-container size2" style="--delay:-1;--s2:-17vw"><img src="https://upload.wikimedia.org/wikipedia/en/9/9b/Tame_Impala_-_Currents.png" alt=""></div>
                 </div>
             </div>
-        </div>
-
-        <div class="page2"> 
-
             <div class="explore-slider">
                 <h3 class="explore-h3" style="--h3-delay:-2.5">Explore</h3>
                 <h3 class="explore-h3" style="--h3-delay:-5">Explore</h3>
@@ -167,7 +185,7 @@
                     <span class="category-description">Nature</span>
                     
                 </div>
-                <div class="category-card cardMore">
+                <div href="explore.html" class="category-card cardMore">
                     <img class="seeAll-img" src="Home-images/seeAll-collage.png">
                     <span class="category-description">See all</span>
                 </div>
@@ -177,6 +195,9 @@
         <footer>
             <section class="footer-content">
                 <div class="footer-socials">
+                    <pre class="footer-slogan">Imagination,
+Creation,Execution.
+                                            </pre>
                     <h3>Socials</h3>
                     <div class="social-links-container">
                         <div class="social-icon-container">
@@ -194,20 +215,19 @@
                     </div>
                 </div>
                 <div class="slogan-container">
-                    <pre class="footer-slogan">Imagination,
-Creation,Execution.
-                    </pre>
+                    
                 </div>
                 <div class="footer-main-content">
                     <ul>
                         <h2>Useful</h2>
-                        <li>Home</li>
-                        <li>Explore</li>
+                        <a id="footerHomeBtn">Home</a>
+                        <a href="explore.html">Explore</a>
+                        <a href="Movies.html">Movies Section</a>
                     </ul>
                     <ul>
                         <h2>Legal</h2>
-                        <li>Terms & Conditions</li>
-                        <li>Privacy Policy</li>
+                        <a href="">Terms & Conditions</a>
+                        <a href="">Privacy Policy</a>
                     </ul>
                 </div>
             </section>
@@ -220,16 +240,16 @@ Creation,Execution.
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script> 
-    <script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
     <script src="https://kit.fontawesome.com/c7d79521ca.js" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/storage.js"></script>
     <script>
         Shery.imageEffect(".explore-container", {
             style: 6,
             config: {"noiseDetail":{"value":0,"range":[0,100]},"distortionAmount":{"value":0,"range":[0,10]},"scale":{"value":0,"range":[0,100]},"speed":{"value":0,"range":[0,1]},"zindex":{"value":17,"range":[-9999999,9999999]},"aspect":{"value":1.8510554219012065},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":0.5,"y":0.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":true},"infiniteGooey":{"value":true},"growSize":{"value":4.31,"range":[1,15]},"durationOut":{"value":1.33,"range":[0.1,5]},"durationIn":{"value":1.22,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":true},"onMouse":{"value":0},"noise_speed":{"value":0.08,"range":[0,10]},"metaball":{"value":0.2,"range":[0,2],"_gsap":{"id":30}},"discard_threshold":{"value":0.71,"range":[0,1]},"antialias_threshold":{"value":0,"range":[0,0.1]},"noise_height":{"value":0.5,"range":[0,2]},"noise_scale":{"value":3.82,"range":[0,100]}},
             gooey:true,
         });
-
     </script>
 </body>
 </html>

@@ -18,14 +18,14 @@
         <div class="fullscreen-toolsContainer">
             <i title="close" id="fullScreen-closeBtn" class="ri-close-line"></i>
             <div class="toolContainer">
-                <button>
-                    <i class="ri-bookmark-line"></i>
+                <button onclick="" id="saveBtn" class="toolBtns">
+                    <i id="save-icon" class="ri-bookmark-line"></i>
                     <span>Save</span>
                 </button>
-                <button>
+                <a id="downloadBtn" href="" download="image" class="toolBtns">
                     <i class="ri-download-line"></i>
                     <span>Download</span>
-                </button>
+                </a>
             </div>
         </div>
         
@@ -34,8 +34,10 @@
         <header>
             <h1>Explore.</h1>
             <div class="header-rightSide">
-                <h2>Home</h2>
-                <a href="Movies.html"><span id="MoviesSectionText">Movies Section</span></a>
+                <a href="index.html">
+                    <h2>Home</h2>
+                </a>
+                <a id="toMovieSectionBtn" href="Movies.html"><span id="MoviesSectionText">Movies Section</span></a>
             </div>
         </header>
         <div class="category-wrapper">
@@ -71,7 +73,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script> 
-    <script src="scripts/explore.js"></script>
     <script src="scripts/storage.js"></script>
+    <script src="scripts/explore.js"></script>
 </body>
 </html>
